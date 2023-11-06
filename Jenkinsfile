@@ -3,6 +3,11 @@ pipeline {
     docker { image 'node:18.18.2-alpine3.17' }
   }
   stages {
+    stage('Install') {
+      steps {
+        sh 'npm install'
+      }
+    }
     stage('Lint') {
       steps {
         sh 'npm run lint'
